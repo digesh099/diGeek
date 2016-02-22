@@ -1,0 +1,31 @@
+#include<stdio.h>
+main()
+{
+	int str[3][8]={"diGesH","NikHiL","dHaRaV"};
+	int i,j;
+	printf("the given strings are:\n ");
+	for(i=0;i<3;i++)
+{
+		//	for(j=0;str[j]!='\0';j++)
+		
+				printf("%c",str[j]);
+		
+			printf("\n");
+}
+	printf("the toggled strings are: \n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;str[i][j]!='\0';j++)
+		
+				if(isupper(str[i][j]))
+				tolower(str[i][j]);
+				else
+				toupper(str[i][j]);
+			printf("%c",str[i][j]);
+				
+}
+}
+			
+	
+	
+	

@@ -1,0 +1,49 @@
+#include<stdio.h>
+ int i=1;
+
+ 	
+main()
+{
+auto int i,j;
+				
+i=reset();
+						
+for(j=1;j<=3;j++)
+{
+											printf("%d%d",i,j);
+											printf("%d",next());
+																
+											printf("%d",last());
+																				
+											printf("%d",new(i+j));
+																				}
+
+}
+
+		
+	tatic int i=10;
+		
+			
+				next(void)
+					{
+							
+								return(i+=1);
+									
+										}
+											
+												last(void)
+													{
+															
+																return(i-=1);
+																	
+																		}
+																		
+																		
+																			new(int i)
+																				{
+																							static int j=5;
+																								
+																										return(i=j+=1);
+																											}
+																											
+																													
