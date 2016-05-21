@@ -1,0 +1,98 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+\\Fileserver\Student Data in Server\ARM7TDMI\LPC2129\shiva.uv2
+Project File Date:  08/02/2013
+
+<h2>Output:</h2>
+compiling shiva.c...
+shiva.c(14): error:  #268: declaration may not appear after executable statement in block
+shiva.c(11): warning:  #177-D: variable "i" was declared but never referenced
+shiva.c(11): warning:  #177-D: variable "j" was declared but never referenced
+shiva.c(14): error:  #67: expected a "}"
+shiva.c(15): error:  #169: expected a declaration
+shiva.c(26): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+shiva.c - 3 Error(s), 3 Warning(s).
+compiling shiva.c...
+shiva.c(15): error:  #268: declaration may not appear after executable statement in block
+shiva.c(12): warning:  #177-D: variable "i" was declared but never referenced
+shiva.c(12): warning:  #177-D: variable "j" was declared but never referenced
+shiva.c(15): error:  #67: expected a "}"
+shiva.c(16): error:  #169: expected a declaration
+shiva.c(27): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+shiva.c - 3 Error(s), 3 Warning(s).
+compiling shiva.c...
+shiva.c(15): error:  #268: declaration may not appear after executable statement in block
+shiva.c(12): warning:  #177-D: variable "i" was declared but never referenced
+shiva.c(12): warning:  #177-D: variable "j" was declared but never referenced
+shiva.c(15): error:  #67: expected a "}"
+shiva.c(16): error:  #169: expected a declaration
+shiva.c(27): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+shiva.c - 3 Error(s), 3 Warning(s).
+compiling shiva.c...
+shiva.c(15): error:  #268: declaration may not appear after executable statement in block
+shiva.c(12): warning:  #177-D: variable "i" was declared but never referenced
+shiva.c(12): warning:  #177-D: variable "j" was declared but never referenced
+shiva.c(15): error:  #67: expected a "}"
+shiva.c(16): error:  #169: expected a declaration
+shiva.c(29): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+shiva.c - 3 Error(s), 3 Warning(s).
+compiling shiva.c...
+shiva.c(15): error:  #268: declaration may not appear after executable statement in block
+shiva.c(12): warning:  #177-D: variable "i" was declared but never referenced
+shiva.c(12): warning:  #177-D: variable "j" was declared but never referenced
+shiva.c(15): error:  #67: expected a "}"
+shiva.c(16): error:  #169: expected a declaration
+shiva.c(29): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+shiva.c - 3 Error(s), 3 Warning(s).
+compiling shiva.c...
+shiva.c(14): error:  #268: declaration may not appear after executable statement in block
+shiva.c(11): warning:  #177-D: variable "i" was declared but never referenced
+shiva.c(11): warning:  #177-D: variable "j" was declared but never referenced
+shiva.c(14): error:  #67: expected a "}"
+shiva.c(15): error:  #169: expected a declaration
+shiva.c(28): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+shiva.c - 3 Error(s), 3 Warning(s).
+compiling shiva.c...
+shiva.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+compiling shiva.c...
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
+compiling shiva.c...
+shiva.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+compiling shiva.c...
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
+compiling shiva.c...
+shiva.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+compiling shiva.c...
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
+compiling shiva.c...
+shiva.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling Startup.s...
+compiling shiva.c...
+linking...
+"shiva.axf" - 0 Error(s), 0 Warning(s).
