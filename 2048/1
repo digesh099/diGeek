@@ -1,0 +1,52 @@
+//     0 1 2 3
+//  ++++++++++
+//  0+ 0 0 0 0
+//  1+ 0 2 2 0
+//  2+ 0 0 2 0
+//  3+ 0 0 0 0
+
+#include<stdio.h>
+#define ROW     4
+#define COLUMN  4
+
+
+void initGamespace(int gm[][])
+{
+    randomNumGen(gm);
+} 
+
+int randomNumGen(int *gm)
+{
+    int row = 0, column = 0;
+    sec = getTimeSec();
+    randNum = sec/4;
+    row = randNum/4;
+    column = randNum%4;
+    gameMatrix[row][column] = 2;
+    return 0;
+}
+
+int main()
+{
+    int key;
+    int gameMatrix[ROW][COLUMN] = {0};
+    //1. initGameSpace(gameMatrix[][]); // the first matrix having one box filled with number 2 at random position
+    //2. identify the keystrok : left,right,up and down
+    printf("\n key is %d:\n", key);
+    while(1)
+    {
+        switch(key)
+        {
+            case 0: right();break;
+            case 1: left();break;
+            case 2: up();break;
+            case 3: down();break;
+            default:
+                    printf("NOP\n");
+                    break;
+        }
+        // winCondition(); // 2048 stop looping
+    }
+
+    return 0;
+}
