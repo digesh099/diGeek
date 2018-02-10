@@ -38,11 +38,12 @@ int randomNumGen(int *gm)
 void printMatrix(int *gm)
 {
     int i = 0, j = 0;
+    printf("\n*")
     for (i = 0; i < ROW; i++)
     {
         for(j = 0; j < COLUMN; j++)
         {
-            printf("%d ", *((gm+j)+4*i));
+            printf("%d\t", *((gm+j)+4*i));
         }
         printf("\n");
     }
@@ -61,9 +62,128 @@ void initGameSpace(int *gm)
 // 2. if match the elements of the same index then add them at rigtmost side
 // 3.
 
-void right(int *gm)
+void right(int gm[ROW][COLUMN])
 {
+    int i=0,j=0,k=0;
+    for(i=0;i<ROW;i++)
+    {
+        for(k=0;k<COLUMN-1;k++)
+        {
+            for(j=COLUMN-1;j>0;j--)
+            {
+                if(gm[i][j] == gm[i][j-1]) //Disadavantage : it will add 0 + 0 as well which is not optimized way
+                {
+                    gm[i][j] += gm[i][j-1];
+                }
+                else if(gm[i][j-1])
+                {
+                    if(gm[i][j])
+                    {
+                        continue;
+                    }
+                    gm[i][j] = gm[i][j-1];
+                }
+                gm[i][j-1] = 0;
+            }
+        }
+    }
 
+    randomNumGen(gm);
+    printMatrix(gm);
+    return;
+}
+
+void left(int gm[ROW][COLUMN])
+{
+    int i=0,j=0,k=0;
+    for(i=0;i<ROW;i++)
+    {
+        for(k=0;k<COLUMN-1;k++)
+        {
+            for(j=0;j<COLUMN-1;j++)
+            {
+                if(gm[i][j] == gm[i][j+1]) //Disadavantage : it will add 0 + 0 as well which is not optimized way
+                {
+                    gm[i][j] += gm[i][j+1];
+                }
+                else if(gm[i][j+1])
+                {
+                    if(gm[i][j])
+                    {
+                        continue;
+                    }
+                    gm[i][j] = gm[i][j+1];
+                }
+                gm[i][j+1] = 0;
+            }
+        }
+    }
+
+    randomNumGen(gm);
+    printMatrix(gm);
+    return;
+}
+
+void up(int gm[ROW][COLUMN])
+{
+    int i=0,j=0,k=0;
+    for(i=0;i<COLUMN;i++)
+    {
+        for(k=0;k<ROW-1;k++)
+        {
+            for(j=0;j<ROW-1;j++)
+            {
+                if(gm[j][i] == gm[j+1][i]) //Disadavantage : it will add 0 + 0 as well which is not optimized way
+                {
+                    gm[j][i] += gm[j+1][i];
+                }
+                else if(gm[j+1][i])
+                {
+                    if(gm[j][i])
+                    {
+                        continue;
+                    }
+                    gm[j][i] = gm[j+1][i];
+                }
+                gm[j+1][i] = 0;
+            }
+        }
+    }
+
+    randomNumGen(gm);
+    printMatrix(gm);
+    return;
+}
+
+void down(int gm[ROW][COLUMN])
+{
+    int i=0,j=0,k=0;
+    for(i=0;i<COLUMN;i++)
+    {
+        for(k=0;k<ROW-1;k++)
+        {
+            for(j=ROW-1;j>0;j--)
+            {
+                if(gm[j][i] == gm[j-1][i]) //Disadavantage : it will add 0 + 0 as well which is not optimized way
+                {
+                    gm[j][i] += gm[j-1][i];
+                }
+                else if(gm[j-1][i])
+                {
+                    if(gm[j][i])
+                    {
+                        continue;
+                    }
+                    gm[j][i] = gm[j-1][i];
+                }
+                gm[j-1][i] = 0;
+            }
+        }
+    }
+
+    randomNumGen(gm);
+    printMatrix(gm);
+    return;
 }
 
 int main()
@@ -87,20 +207,20 @@ int main()
             switch(getchar())
             {
                 case 'C':
-                    right(gameMatrix);
                     printf("right key\n");
+                    right(gameMatrix);
                     break;
                 case 'D':
-                    left(gameMatrix);
                     printf("left key\n");
+                    left(gameMatrix);
                     break;
                 case 'A':
-                    up(gameMatrix);
                     printf("up key\n");
+                    up(gameMatrix);
                     break;
                 case 'B':
-                    down(gameMatrix);
                     printf("down key\n");
+                    down(gameMatrix);
                     break;
                 default:
                     break;
