@@ -1,0 +1,132 @@
+#include<stdio.h>
+    /*
+       make Qnode : x,y values, self struct ptr
+       Queue : Qnode, head, tail
+       */
+    /* 1.Enqueue:
+       - isEmpty : add node. head and tail point to same node
+       - compare the x with the existing node's x value
+       - if found 'x'in any node :
+       ----add the node behind it.
+       ----if the match node's next == NULL then move the tail to newly added node
+       - maximum queue capacity is (max x value * max y value)
+       - allow enqueue operation only if (count < capacity)
+       2. Dequeue:
+       - isEmpty : Return. NA
+       - free the currnt head and point head to head->next
+       - store the x,y values
+       */
+
+typedef struct qNode
+{
+    int house;
+    int houseId;
+    struct qNode *next;
+}qNode;
+
+typedef struct queue
+{
+    qNode *qnode;
+    struct queue *head;
+    struct queue *tail;
+}queue;
+
+queue *newNode()
+{
+    queue *ptr;
+    ptr = (queue*) malloc(sizeof(queue));
+    if(ptr == NULL)
+    {
+        printf("Node creation fail\n");
+    }
+    ptr->head = NULL;
+    ptr->tail = NULL;
+    ptr->qnode->next = NULL;
+
+    return ptr;
+}
+
+int enQueue(queue *node, int house, int houseId)
+{
+    queue *nnode;
+
+    // if empty queue
+    if(node->head == NULL && node->tail == NULL)
+    {
+        node->qnode->house = house;
+        node->qnode->houseId = houseId;
+        node->qnode->next = NULL;
+        node->head = node;
+        node->tail = node;
+        return 1;
+    }
+
+    nnode = newNode();
+    nnode->qnode->house = house;
+    nnode->qnode->houseId = houseId;
+    nnode->qnode->next = NULL;
+
+    node->qnode->next = nnode->qnode;
+    node->tail = nnode;
+#if 0
+    queue *tmpHead;
+    tmpHead = node;
+    qNode *tmpNext;
+
+    // search the houses first. if its available then keep the new node behind it
+    while(tmpHead->qnode->next != NULL)
+    {
+        if (tmpHead->qnode->house == house)
+        {
+            tmpNext = tmpHead->qnode->next;
+            tmpHead->qnode->next = nnode->qnode;
+            nnode->qnode->next = tmpNext;
+        }
+        tmpHead->qnode = tmpHead->qnode->next;
+    }
+
+    node = tmpHead;
+#endif
+    return 1;
+}
+
+int deQueue(queue *node)
+{
+    queue *tmpNode;
+    tmpNode->qnode = node->qnode;
+    free(node);
+    node->qnode = tmpNode;
+    return 1;
+}
+
+int main()
+{
+    int numOfOperation = 0, house = 0, houseId = 0;
+    char qOperation, ch;
+    queue *nnode, *node;
+    scanf("%d", &numOfOperation);
+    node = newNode();
+    while((ch = getchar()) != EOF)
+    {
+        scanf(" %c %d %d\n", &qOperation, &house, &houseId);
+        //printf("\nnumOfOperation=%d qOperation=%c house=%d houseId=%d\n", numOfOperation, qOperation, house, houseId);
+        switch(qOperation)
+        {
+            case 'E':
+                enQueue(node, house, houseId);
+                break;
+            case 'D':
+                if(node->head != NULL)
+                {
+                    deQueue(node);
+                }
+                break;
+            default:
+                printf("Invalid input given");
+         }
+
+    }
+    return 1;
+
+}
+
