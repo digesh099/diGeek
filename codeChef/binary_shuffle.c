@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdint.h>
-#include <inttypes.h>
+#include<inttypes.h>
 
 /* Function to get no of set bits in binary
    representation of positive integer n */
@@ -13,6 +13,20 @@ unsigned int countSetBits(uint8_t n)
         n >>= 1;
     }
     return count;
+}
+
+unsigned power(unsigned base, unsigned degree)
+{
+    unsigned result = 1;
+    unsigned term = base;
+    while (degree)
+    {
+        if (degree & 1)
+            result *= term;
+        term *= term;
+        degree = degree >> 1;
+    }
+    return result;
 }
 
 void main()
@@ -37,17 +51,19 @@ void main()
             {
                 // shuffle operation
                 a = b-1;
-
                 // addition operation
                 ++a;
-                continue;
             }
-            // 2. shuffle operation
-            if(aCount != 0x8)
+            else if(aCount > bMinusOneCount)
+            {
+                a &= a-1;
+            }
+            else if(aCount < bMinusOneCount)
+            {
+                a = power(2,aCount)-1;
                 a <<= 1;
+            }
 
-            // 3. addition operation
-            ++a;
         }
         //printf("count to reach A --> B is %d\n", count);
         printf("%d\n", count);
