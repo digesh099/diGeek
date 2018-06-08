@@ -59,12 +59,10 @@ void main()
     uint8_t a = 0, b = 0, aCount = 0, bMinusOneCount = 0, count = 0;
     uint32_t numOfOperation = 0;
     scanf("%d", &numOfOperation);
-    //printf("num of operation is : %d\n", numOfOperation);
 
     while(numOfOperation--)
     {
         scanf("%3" SCNu8 "%3" SCNu8, &a, &b);
-        //printf("num of operation is : %d\n", numOfOperation);
         printf("%3" PRIu8 " %3" PRIu8 "\n", a, b);
         // 1. prefix zeroes are already added since unsigned int decimal is taken
         while(a!=b)
@@ -92,7 +90,6 @@ void main()
             ++count;
 
         }
-        //printf("count to reach A --> B is %d\n", count);
         printf("%d\n", count);
         count = 0;
     }
