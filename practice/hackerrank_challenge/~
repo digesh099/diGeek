@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+    int t = 0;
+    int n = 0;
+    int i = 0;
+    
+    scanf("%d", &t);
+    for(i = 0; i<t; i++)
+    {
+        scanf("%d", &n);
+        printf("%d", downToZero(n));
+    }
+
+    return 0;
+}
